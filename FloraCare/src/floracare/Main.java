@@ -4,43 +4,31 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Plant[] plants = {
+        InputHelper input = new InputHelper();
 
-                new FlowerPlant(
-                        "F001",
-                        "Rose",
-                        90,
-                        35,
-                        "Red"
-                ),
+        String id = input.inputString("Plant ID : ");
 
-                new CactusPlant(
-                        "C001",
-                        "Golden Barrel",
-                        180,
-                        25,
-                        150
-                ),
+        String name = input.inputString("Plant Name : ");
 
-                new TropicalPlant(
-                        "T001",
-                        "Monstera",
-                        120,
-                        50,
-                        80
-                )
+        int age = input.inputInt("Plant Age : ");
 
-        };
+        double height = input.inputDouble("Plant Height : ");
 
-        System.out.println("========== FLORACARE ==========");
+        FlowerPlant flower = new FlowerPlant(
 
-        for (Plant plant : plants) {
+                id,
 
-            plant.displayInfo();
+                name,
 
-            System.out.println();
+                age,
 
-        }
+                height,
+
+                "Red"
+
+        );
+
+        flower.displayInfo();
 
     }
 

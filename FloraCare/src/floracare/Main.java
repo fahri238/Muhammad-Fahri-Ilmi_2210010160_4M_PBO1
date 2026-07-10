@@ -4,14 +4,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Plant plant = new Plant(
-                "P001",
-                "Monstera",
-                120,
-                45.5
+        FlowerPlant flower = new FlowerPlant(
+                "F001",
+                "Rose",
+                90,
+                35.5,
+                "Red"
         );
 
-        plant.displayInfo();
+        flower.displayInfo();
 
     }
 

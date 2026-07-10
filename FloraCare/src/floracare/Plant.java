@@ -85,15 +85,22 @@ public class Plant {
         }
 
     }
+    
+    public double calculateWaterNeed() {
+        return 300;
+    }
 
     public void displayInfo() {
 
-        System.out.println("------------------------------");
-        System.out.println("Plant ID      : " + id);
-        System.out.println("Plant Name    : " + name);
-        System.out.println("Plant Age     : " + age + " days");
-        System.out.println("Plant Height  : " + height + " cm");
-        System.out.println("Water Status  : " + (watered ? "Watered" : "Not Watered"));
-    }
+    System.out.println("------------------------------");
+    System.out.println("Plant ID      : " + id);
+    System.out.println("Plant Name    : " + name);
+    System.out.println("Plant Age     : " + age + " days");
+    System.out.println("Plant Height  : " + height + " cm");
+    System.out.println("Water Status  : " + (watered ? "Watered" : "Not Watered"));
+
+    System.out.println("Water Need    : " + calculateWaterNeed() + " ml/day");
+
+}
 
 }

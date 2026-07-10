@@ -29,6 +29,11 @@ public class FlowerPlant extends Plant {
         }
 
     }
+    
+    @Override
+    public double calculateWaterNeed() {
+        return 400 + (getHeight() * 2);
+    }
 
     @Override
     public void displayInfo() {

@@ -4,15 +4,43 @@ public class Main {
 
     public static void main(String[] args) {
 
-        FlowerPlant flower = new FlowerPlant(
-                "F001",
-                "Rose",
-                90,
-                35.5,
-                "Red"
-        );
+        Plant[] plants = {
 
-        flower.displayInfo();
+                new FlowerPlant(
+                        "F001",
+                        "Rose",
+                        90,
+                        35,
+                        "Red"
+                ),
+
+                new CactusPlant(
+                        "C001",
+                        "Golden Barrel",
+                        180,
+                        25,
+                        150
+                ),
+
+                new TropicalPlant(
+                        "T001",
+                        "Monstera",
+                        120,
+                        50,
+                        80
+                )
+
+        };
+
+        System.out.println("========== FLORACARE ==========");
+
+        for (Plant plant : plants) {
+
+            plant.displayInfo();
+
+            System.out.println();
+
+        }
 
     }
 

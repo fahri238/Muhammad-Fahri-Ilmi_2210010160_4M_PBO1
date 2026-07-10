@@ -12,7 +12,7 @@ public class Main {
             int choice = input.inputInt("Choose menu : ");
             switch(choice){
                 case 1:
-                    System.out.println("Feature will be implemented next commit.");
+                    manager.addPlantFromInput(input);
                     break;
                     
                 case 2:

@@ -55,13 +55,83 @@ public class PlantManager {
     
     // plant height update
     public void growPlant(String id, double growth){
-    Plant plant = searchPlant(id);
-    if(plant != null){
-        plant.grow(growth);
-        System.out.println("Plant height updated.");
-    }else{
-        System.out.println("Plant not found.");
+        Plant plant = searchPlant(id);
+        if(plant != null){
+            plant.grow(growth);
+            System.out.println("Plant height updated.");
+        }else{
+            System.out.println("Plant not found.");
+        }
     }
+    
+    public void addPlantFromInput(InputHelper input){
+    System.out.println("Choose Plant Type");
+    System.out.println("1. Flower Plant");
+    System.out.println("2. Cactus Plant");
+    System.out.println("3. Tropical Plant");
 
+    int choice = input.inputInt("Choice : ");
+    String id = input.inputString("ID : ");
+    String name = input.inputString("Name : ");
+    int age = input.inputInt("Age : ");
+    double height = input.inputDouble("Height : ");
+
+    Plant plant = null;
+
+    switch(choice){
+
+
+        case 1:
+            String color =
+                    input.inputString("Flower Color : ");
+            int fragrance =
+                    input.inputInt("Fragrance Level (1-10) : ");
+            plant = new FlowerPlant(
+                    id,
+                    name,
+                    age,
+                    height,
+                    color,
+                    fragrance
+            );
+            break;
+
+        case 2:
+            int thorn =
+                    input.inputInt("Thorn Count : ");
+            int indoor =
+                    input.inputInt("Indoor? (1 Yes / 0 No) : ");
+
+            plant = new CactusPlant(
+                    id,
+                    name,
+                    age,
+                    height,
+                    thorn,
+                    indoor == 1
+            );
+            break;
+
+
+
+        case 3:
+            int humidity =
+                    input.inputInt("Humidity Level : ");
+            double leaf =
+                    input.inputDouble("Leaf Width : ");
+            plant = new TropicalPlant(
+                    id,
+                    name,
+                    age,
+                    height,
+                    humidity,
+                    leaf
+            );
+            break;
+        default:
+            System.out.println("Invalid plant type.");
+            return;
+    }
+    addPlant(plant);
 }
 }

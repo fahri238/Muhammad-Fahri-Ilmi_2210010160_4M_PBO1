@@ -41,9 +41,19 @@ public class Main {
                     break;
                     
                 case 6:
+                    id = input.inputString("Plant ID : ");
+                    manager.deletePlant(id);
+                    break;
+                    
+                case 7:
+                    manager.showStatistics();
+                    break;
+                    
+                case 8:
                     running = false;
                     System.out.println("Thank you for using FloraCare.");
                     break;
+                    
                     
                 default:
                     System.out.println("Invalid menu.");

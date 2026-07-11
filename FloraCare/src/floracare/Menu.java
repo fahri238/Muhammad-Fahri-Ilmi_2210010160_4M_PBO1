@@ -13,7 +13,9 @@ public class Menu {
         System.out.println("3. Search Plant");
         System.out.println("4. Water Plant");
         System.out.println("5. Grow Plant");
-        System.out.println("6. Exit");
+        System.out.println("6. Delete Plant");
+        System.out.println("7. Statistics");
+        System.out.println("8. Exit");
         System.out.println("====================================");
 
     }

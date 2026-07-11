@@ -65,73 +65,122 @@ public class PlantManager {
     }
     
     public void addPlantFromInput(InputHelper input){
-    System.out.println("Choose Plant Type");
-    System.out.println("1. Flower Plant");
-    System.out.println("2. Cactus Plant");
-    System.out.println("3. Tropical Plant");
+        System.out.println("Choose Plant Type");
+        System.out.println("1. Flower Plant");
+        System.out.println("2. Cactus Plant");
+        System.out.println("3. Tropical Plant");
 
-    int choice = input.inputInt("Choice : ");
-    String id = input.inputString("ID : ");
-    String name = input.inputString("Name : ");
-    int age = input.inputInt("Age : ");
-    double height = input.inputDouble("Height : ");
+        int choice = input.inputInt("Choice : ");
+        String id = input.inputString("ID : ");
+        String name = input.inputString("Name : ");
+        int age = input.inputInt("Age : ");
+        double height = input.inputDouble("Height : ");
 
-    Plant plant = null;
+        Plant plant = null;
 
-    switch(choice){
-
-
-        case 1:
-            String color =
-                    input.inputString("Flower Color : ");
-            int fragrance =
-                    input.inputInt("Fragrance Level (1-10) : ");
-            plant = new FlowerPlant(
-                    id,
-                    name,
-                    age,
-                    height,
-                    color,
-                    fragrance
-            );
-            break;
-
-        case 2:
-            int thorn =
-                    input.inputInt("Thorn Count : ");
-            int indoor =
-                    input.inputInt("Indoor? (1 Yes / 0 No) : ");
-
-            plant = new CactusPlant(
-                    id,
-                    name,
-                    age,
-                    height,
-                    thorn,
-                    indoor == 1
-            );
-            break;
+        switch(choice){
 
 
+            case 1:
+                String color =
+                        input.inputString("Flower Color : ");
+                int fragrance =
+                        input.inputInt("Fragrance Level (1-10) : ");
+                plant = new FlowerPlant(
+                        id,
+                        name,
+                        age,
+                        height,
+                        color,
+                        fragrance
+                );
+                break;
 
-        case 3:
-            int humidity =
-                    input.inputInt("Humidity Level : ");
-            double leaf =
-                    input.inputDouble("Leaf Width : ");
-            plant = new TropicalPlant(
-                    id,
-                    name,
-                    age,
-                    height,
-                    humidity,
-                    leaf
-            );
-            break;
-        default:
-            System.out.println("Invalid plant type.");
-            return;
+            case 2:
+                int thorn =
+                        input.inputInt("Thorn Count : ");
+                int indoor =
+                        input.inputInt("Indoor? (1 Yes / 0 No) : ");
+
+                plant = new CactusPlant(
+                        id,
+                        name,
+                        age,
+                        height,
+                        thorn,
+                        indoor == 1
+                );
+                break;
+
+
+
+            case 3:
+                int humidity =
+                        input.inputInt("Humidity Level : ");
+                double leaf =
+                        input.inputDouble("Leaf Width : ");
+                plant = new TropicalPlant(
+                        id,
+                        name,
+                        age,
+                        height,
+                        humidity,
+                        leaf
+                );
+                break;
+            default:
+                System.out.println("Invalid plant type.");
+                return;
+        }
+        addPlant(plant);
     }
-    addPlant(plant);
-}
+    
+    public boolean isIdExist(String id){
+        return searchPlant(id) != null;
+    }
+    
+    public void deletePlant(String id){
+        int index = -1;
+        for(int i = 0; i < totalPlant; i++){
+            if(plants[i].getId().equalsIgnoreCase(id)){
+                index = i;
+                break;
+            }
+        }
+
+        if(index == -1){
+            System.out.println("Plant not found.");
+            return;
+        }
+
+        for(int i = index; i < totalPlant - 1; i++){
+            plants[i] = plants[i + 1];
+        }
+
+        plants[totalPlant - 1] = null;
+        totalPlant--;
+        System.out.println("Plant deleted successfully.");
+    }
+    
+    public void showStatistics(){
+        int flower = 0;
+        int cactus = 0;
+        int tropical = 0;
+
+        for(int i = 0; i < totalPlant; i++){
+            if(plants[i] instanceof FlowerPlant){
+                flower++;
+            }else if(plants[i] instanceof CactusPlant){
+                cactus++;
+            }else if(plants[i] instanceof TropicalPlant){
+                tropical++;
+            }
+        }
+
+        System.out.println("========== COLLECTION ==========");
+        System.out.println("Flower   : " + flower);
+        System.out.println("Cactus   : " + cactus);
+        System.out.println("Tropical : " + tropical);
+        System.out.println("Total    : " + totalPlant);
+    }
 }

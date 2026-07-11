@@ -124,6 +124,32 @@ FloraCare merupakan aplikasi sederhana berbasis Java Console yang menerapkan ber
 
 ---
 
+# 📊 Penilaian Mandiri UAS
+
+Berikut merupakan penilaian mandiri berdasarkan kriteria yang diberikan pada tugas Ujian Akhir Semester.
+
+|  No | Materi         | Nilai Maksimal |  Nilai  | Implementasi                                                                                                                                  |
+| :-: | -------------- | :------------: | :-----: | --------------------------------------------------------------------------------------------------------------------------------------------- |
+|  1  | Class          |        5       |  **5**  | Menggunakan beberapa class seperti `Plant`, `FlowerPlant`, `CactusPlant`, `TropicalPlant`, `PlantManager`, `Menu`, `InputHelper`, dan `Main`. |
+|  2  | Object         |        5       |  **5**  | Pembuatan objek tanaman dan objek pendukung seperti `PlantManager` serta `InputHelper`.                                                       |
+|  3  | Attribute      |        5       |  **5**  | Seluruh class memiliki atribut sesuai kebutuhan program.                                                                                      |
+|  4  | Constructor    |        5       |  **5**  | Setiap class menggunakan constructor untuk inisialisasi objek.                                                                                |
+|  5  | Mutator        |        5       |  **5**  | Menggunakan method setter untuk mengubah data objek dengan validasi.                                                                          |
+|  6  | Accessor       |        5       |  **5**  | Menggunakan method getter untuk mengambil data objek.                                                                                         |
+|  7  | Encapsulation  |        5       |  **5**  | Semua atribut dibuat `private` dan diakses melalui getter dan setter.                                                                         |
+|  8  | Inheritance    |        5       |  **5**  | `FlowerPlant`, `CactusPlant`, dan `TropicalPlant` mewarisi class `Plant`.                                                                     |
+|  9  | Polymorphism   |       10       |  **10** | Override method `displayInfo()` dan `calculateWaterNeed()`, serta penggunaan array bertipe `Plant[]`.                                         |
+|  10 | Seleksi        |        5       |  **5**  | Menggunakan `if-else` dan `switch-case` pada validasi dan menu program.                                                                       |
+|  11 | Perulangan     |        5       |  **5**  | Menggunakan `for` dan `while` pada pengelolaan data dan menu utama.                                                                           |
+|  12 | IO Sederhana   |       10       |  **10** | Input pengguna menggunakan `Scanner` melalui class `InputHelper` dan output menggunakan `System.out.println()`.                               |
+|  13 | Array          |       15       |  **15** | Data tanaman disimpan dalam array bertipe `Plant[]` dan dikelola melalui `PlantManager`.                                                      |
+|  14 | Error Handling |       15       |  **15** | Menggunakan `try-catch` (`InputMismatchException`) untuk menangani kesalahan input pengguna.                                                  |
+|     | **TOTAL**      |     **100**    | **100** | Seluruh kriteria pada tugas UAS telah diimplementasikan dalam project FloraCare.                                                              |
+
+> **Catatan:** Penilaian di atas merupakan penilaian mandiri berdasarkan implementasi fitur dan konsep Pemrograman Berorientasi Objek pada project **FloraCare – Smart Plant Collection Manager**. Penilaian akhir tetap mengikuti hasil evaluasi dosen terhadap implementasi program yang dikumpulkan.
+
+---
+
 **Disusun oleh:**
 
 **Muhammad Fahri Ilmi**
